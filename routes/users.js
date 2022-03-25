@@ -25,7 +25,7 @@ router.get('/login', notAuthenticated, recaptcha.middleware.render, (req, res) =
 
 router.post('/login', recaptcha.middleware.verify, captchaLogin, async(req, res, next) => {
     passport.authenticate('local', {
-        successRedirect: '/docs',
+        successRedirect: '/docs.html',
         failureRedirect: '/users/login',
         failureFlash: true,
     })(req, res, next);
